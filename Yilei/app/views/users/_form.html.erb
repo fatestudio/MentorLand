@@ -1,0 +1,61 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :password_digest %><br />
+    <%= f.text_field :password_digest %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_card_no %><br />
+    <%= f.text_field :credit_card_no %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_card_month %><br />
+    <%= f.number_field :credit_card_month %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_card_year %><br />
+    <%= f.number_field :credit_card_year %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_card_verification_value %><br />
+    <%= f.text_field :credit_card_verification_value %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_card_billing_address %><br />
+    <%= f.text_field :credit_card_billing_address %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_card_type %><br />
+    <%= f.text_field :credit_card_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

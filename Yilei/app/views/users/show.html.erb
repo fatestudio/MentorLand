@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Password digest:</b>
+  <%= @user.password_digest %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <b>Credit card no:</b>
+  <%= @user.credit_card_no %>
+</p>
+
+<p>
+  <b>Credit card month:</b>
+  <%= @user.credit_card_month %>
+</p>
+
+<p>
+  <b>Credit card year:</b>
+  <%= @user.credit_card_year %>
+</p>
+
+<p>
+  <b>Credit card verification value:</b>
+  <%= @user.credit_card_verification_value %>
+</p>
+
+<p>
+  <b>Credit card billing address:</b>
+  <%= @user.credit_card_billing_address %>
+</p>
+
+<p>
+  <b>Credit card type:</b>
+  <%= @user.credit_card_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

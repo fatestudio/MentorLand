@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  name: MyString
+  password_digest: MyString
+  first_name: MyString
+  last_name: MyString
+  credit_card_no: MyString
+  credit_card_month: 1
+  credit_card_year: 1
+  credit_card_verification_value: MyString
+  credit_card_billing_address: MyString
+  credit_card_type: MyString
+
+two:
+  email: MyString
+  name: MyString
+  password_digest: MyString
+  first_name: MyString
+  last_name: MyString
+  credit_card_no: MyString
+  credit_card_month: 1
+  credit_card_year: 1
+  credit_card_verification_value: MyString
+  credit_card_billing_address: MyString
+  credit_card_type: MyString
