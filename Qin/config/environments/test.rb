@@ -34,4 +34,7 @@ Mentorland::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  
+  # ActionMailer Config
+  config.action_mailer.default_url_options = { :host => 'ec2-54-202-91-11.us-west-2.compute.amazonaws.com' }
 end

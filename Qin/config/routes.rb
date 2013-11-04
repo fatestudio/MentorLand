@@ -1,5 +1,7 @@
 Mentorland::Application.routes.draw do
   
+  devise_for :users
+
   controller :sessions do
     get  'login' => :new
     post 'login' => :create
@@ -7,12 +9,6 @@ Mentorland::Application.routes.draw do
 	post 'register' => :regUser
     #delete 'logout' => :destroy
   end
-
-  resources :users
-
-
-  #resources :courses
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
