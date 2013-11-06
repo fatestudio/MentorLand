@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+<b>Your Role</b>
+    <% if current_user.has_role? :user %>
+    <li>
+	User
+    </li>
+    <% end %>
+    <% if current_user.has_role? :admin %>
+    <li>
+    	Admin  
+    </li>
+    <% end %>
+    <% if current_user.has_role? :mentor %>
+    <li>
+    	Mentor
+    </li>
+    <% end %>
+    <% if current_user.has_role? :student %>
+    <li>
+    	Student
+    </li>
+    <% end %>
+</p>
+
+<% unless @user.has_role? :mentor %>
+  <%= button_to('Be a Mentor', addMentor_url, :confirm => 'Are you sure?') %>
+<% end %>
+<% unless @user.has_role? :student %>
+  <%= button_to('Be a Student', addStudent_url, :confirm => 'Are you sure?') %>
+<% end %>
+
+<%= link_to 'Back to Homepage', root_url %>

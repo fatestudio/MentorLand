@@ -94,7 +94,7 @@ class UsersController < ApplicationController
   end
 
   def addStudent
-    current_user.roles << Role.where(:name => :student).first
+    current_user.roles << Role.where(:name => :mentor).first
 	
     respond_to do |format|
 	format.html { redirect_to profile_url }

@@ -1,0 +1,29 @@
+<h3>Welcome to MentorLand!</h3>
+<h4>Your Role:</h4>
+<% if user_signed_in? %>
+    <% if current_user.has_role? :user %>
+    <li>
+	User
+    </li>
+    <% end %>
+    <% if current_user.has_role? :admin %>
+    <li>
+    	Admin  
+    </li>
+    <% end %>
+    <% if current_user.has_role? :mentor %>
+    <li>
+    	Mentor
+    </li>
+    <% end %>
+    <% if current_user.has_role? :student %>
+    <li>
+    	Student
+    </li>
+    <% end %>
+<% else %>
+  <li>
+	Guest
+  </li>
+<% end %>  
+

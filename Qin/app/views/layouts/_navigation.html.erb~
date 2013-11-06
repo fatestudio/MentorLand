@@ -16,7 +16,7 @@
     <% end %>
     <% if current_user.has_role? :student %>
       <li>
-      <%= link_to 'Be Student', student_url %>
+      <%= link_to 'Be Student', root_url %>
       </li>
     <% end %>
   <% else %>

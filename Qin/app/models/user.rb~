@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :courses, dependent: :destroy
   rolify
   
   # Include default devise modules. Others available are:

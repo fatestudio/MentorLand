@@ -8,7 +8,6 @@ Mentorland::Application.routes.draw do
   get "profile" => "users#profile"	
   post "addMentor" => "users#addMentor"
   post "addStudent" => "users#addStudent"
-
   get "mentor" => "home#index"
   get "student" => "home#index"
 
