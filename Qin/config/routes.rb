@@ -9,8 +9,12 @@ Mentorland::Application.routes.draw do
   post "addMentor" => "users#addMentor"
   post "addStudent" => "users#addStudent"
 
-  get "mentor" => "home#index"
-  get "student" => "home#index"
+  get "mentor" => "mentors#show"
+  post "mentor" => "mentors#createCourse"
+  
+  get "student" => "students#show"
+  post "student" => "students#addCourse"
+  get "admin" => "users#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

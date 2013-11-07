@@ -1,0 +1,10 @@
+class MentorsController < ApplicationController
+  # GET /students/1
+  def show
+    @student = current_user
+    @my_courses = @student.courses
+
+    @courses = Course.all
+  end
+
+end

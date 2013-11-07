@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :courses, dependent: :destroy
+  has_one :mentor
+  has_one :student
   rolify
   
   # Include default devise modules. Others available are:
@@ -8,7 +9,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :user_id
   #attr_accessible :email, :first_name, :last_name, :name, :password, :password_confirmation
   validates :name, :presence => true, :uniqueness => true
   validates :email, format: { with: /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/, message: "Please enter correct email address" }, :presence => true, :uniqueness => true 

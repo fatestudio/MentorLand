@@ -1,0 +1,73 @@
+<p>
+  <b>Email:</b>
+  <%= @mentor.email %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @mentor.name %>
+</p>
+
+<p>
+<b>My Role</b>
+    <% if @mentor.has_role? :user %>
+    <li>
+	User
+    </li>
+    <% end %>
+    <% if @mentor.has_role? :admin %>
+    <li>
+    	Admin  
+    </li>
+    <% end %>
+    <% if @mentor.has_role? :mentor %>
+    <li>
+    	Mentor
+    </li>
+    <% end %>
+    <% if @mentor.has_role? :student %>
+    <li>
+    	Student
+    </li>
+    <% end %>
+</p>
+
+<b>My Courses</b>
+<table>
+<tr>
+	<td>Course Name</td>
+	<td>Price</td>
+	<td>Capacity</td>
+</tr>
+<% @courses.each do |course| %>
+  <tr>
+    	<td><%= course.name %></td>
+	<td><%= course.price %></td>
+	<td><%= course.capacity %></td>
+  </tr>
+<% end %>
+</table>
+
+<b>Create New Course</b>
+<%= simple_form_for(@course, :url => mentor_url) do |f| %>
+
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %>
+        prohibited this user from being saved:</h2>
+      <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<%= f.input :name %>
+	<%= f.input :price, collection: 0..50 %>
+	<%= f.input :capacity, collection: 1..50 %>
+	<%= f.hidden_field :user_id, :value => @mentor.id %>
+	<%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Back to Homepage', root_url %>

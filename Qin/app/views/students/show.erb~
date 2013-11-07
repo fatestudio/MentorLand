@@ -1,0 +1,67 @@
+<p>
+  <b>Email:</b>
+  <%= @student.email %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @student.name %>
+</p>
+
+<p>
+<b>My Role</b>
+    <% if @student.has_role? :user %>
+    <li>
+	User
+    </li>
+    <% end %>
+    <% if @student.has_role? :admin %>
+    <li>
+    	Admin  
+    </li>
+    <% end %>
+    <% if @student.has_role? :mentor %>
+    <li>
+    	Mentor
+    </li>
+    <% end %>
+    <% if @student.has_role? :student %>
+    <li>
+    	Student
+    </li>
+    <% end %>
+</p>
+
+<b>My Courses</b>
+<table>
+<tr>
+	<td>Course Name</td>
+	<td>Price</td>
+	<td>Capacity</td>
+</tr>
+<% @my_courses.each do |course| %>
+  <tr>
+    	<td><%= course.name %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+<b>All Courses</b>
+<table>
+<tr>
+	<td>Course Name</td>
+	<td>Price</td>
+	<td>Capacity</td>
+</tr>
+<% @courses.each do |course| %>
+<tr>
+	<td><%= course.name %></td>
+	<td><%= button_to("enroll", student_url, {:url => student_url, :course_id => course.id }, :remote => false) %></td>	
+</tr>
+<% end %>
+</table>
+
+
+<%= link_to 'Back to Homepage', root_url %>

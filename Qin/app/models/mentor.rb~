@@ -1,0 +1,8 @@
+class Mentor < User
+  has_many :courses 
+
+  protected
+  def add_course
+    self.courses << :course
+  end
+end
