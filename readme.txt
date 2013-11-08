@@ -6,6 +6,6 @@ d
 
 Let us split the work first. Everyone creates its own folder, finishes the basic functions of own part, then merges them together. 
 1
-3
+6
 2
 4
