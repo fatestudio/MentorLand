@@ -2,13 +2,33 @@
 <html>
 <head>
   <title>Mentorland</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body class='<%= controller.controller_name %>'>
-
-<%= yield %>
-
+<body class="<%= controller.controller_name %>">
+  <div id="banner">
+    <%= @page_title || "Mentorland" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <ul>
+        <li>User: student</li>
+        <li>Course List:</li>
+        <li><a href="http://www..../news">Database</a></li>
+        <li><a href="http://www..../news">Network</a></li>
+        <li><a href="http://www..../news">Algorithm</a></li>
+		<p></p>
+		<br></br>
+		<p></p>
+        <li><a href="http://www..../contact">Go to Cart</a></li>
+        <li><a href="http://www..../contact">Log out</a></li>		
+      </ul>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
+

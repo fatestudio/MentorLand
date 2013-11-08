@@ -1,0 +1,16 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Avaliable courses</h1>
+
+<% @courses.each do |course| %>
+  <div class="entry">
+    <h3><%= course.name %></h3>
+    <p><%= sanitize(course.description) %></p>
+    <div class="price_line">
+      <span class="price"><%= number_to_currency(course.price) %></span>
+	  <%= button_to 'Add to Cart', line_items_path(course_id: course) %>
+	</div>
+  </div>
+<% end %>
