@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Card_no:</b>
+  <%= @order.card_no %>
+</p>
+
+<p>
+  <b>Month:</b>
+  <%= @order.month %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @order.year %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @order.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @order.last_name %>
+</p>
+
+<p>
+  <b>Billing address:</b>
+  <%= @order.billing_address %>
+</p>
+
+<p>
+  <b>Verification value:</b>
+  <%= @order.verification_value %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
